@@ -60,8 +60,6 @@ namespace ProfilerModuleOverride
             var list = new List<MLAPIProfilerCounter>();
             list.Add(new MLAPIProfilerCounter() { m_Name = ProfilerConstants.NumberOfConnections.ToString(), m_Category = ProfilerCategory.Network.Name });
             list.Add(new MLAPIProfilerCounter() { m_Name = ProfilerConstants.ReceiveTickRate.ToString(), m_Category = ProfilerCategory.Network.Name });
-            list.Add(new MLAPIProfilerCounter() { m_Name = ProfilerConstants.NumberOfTransportSends.ToString(), m_Category = ProfilerCategory.Network.Name });
-            list.Add(new MLAPIProfilerCounter() { m_Name = ProfilerConstants.NumberOfTransportSendQueues.ToString(), m_Category = ProfilerCategory.Network.Name });
             return list;
         }
 
@@ -138,8 +136,6 @@ namespace ProfilerModuleOverride
             //Operations
             ProfilerInfo.ConnectionsCounterValue.Value += tickData.GetData(ProfilerConstants.NumberOfConnections.ToString());
             ProfilerInfo.TickRateCounterValue.Value += tickData.GetData(ProfilerConstants.ReceiveTickRate.ToString());
-            ProfilerInfo.TransportSendsCounterValue.Value += tickData.GetData(ProfilerConstants.NumberOfTransportSends.ToString());
-            ProfilerInfo.TransportSendQueuesCounterValue.Value += tickData.GetData(ProfilerConstants.NumberOfTransportSendQueues.ToString());
 
             //Messages
             ProfilerInfo.NamedMessagesCounterValue.Value += tickData.GetData(ProfilerConstants.NumberOfNamedMessages.ToString());

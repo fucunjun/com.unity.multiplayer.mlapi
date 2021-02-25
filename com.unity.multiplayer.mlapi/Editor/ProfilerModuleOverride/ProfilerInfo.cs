@@ -15,18 +15,10 @@ namespace ProfilerModuleOverride
         // Operations
         public static MLAPIProfilerCounterValue<int> ConnectionsCounterValue =
         new MLAPIProfilerCounterValue<int>(ProfilerCategory.Network, ProfilerConstants.NumberOfConnections.ToString(),
-            ProfilerMarkerDataUnit.Count, ProfilerCounterOptions.FlushOnEndOfFrame | Pro);
+            ProfilerMarkerDataUnit.Count, ProfilerCounterOptions.FlushOnEndOfFrame);
 
         public static MLAPIProfilerCounterValue<int> TickRateCounterValue =
             new MLAPIProfilerCounterValue<int>(ProfilerCategory.Network, ProfilerConstants.ReceiveTickRate.ToString(),
-                ProfilerMarkerDataUnit.Count, ProfilerCounterOptions.FlushOnEndOfFrame);
-
-        public static MLAPIProfilerCounterValue<int> TransportSendsCounterValue =
-            new MLAPIProfilerCounterValue<int>(ProfilerCategory.Network, ProfilerConstants.NumberOfTransportSends.ToString(),
-                ProfilerMarkerDataUnit.Count, ProfilerCounterOptions.FlushOnEndOfFrame);
-
-        public static MLAPIProfilerCounterValue<int> TransportSendQueuesCounterValue =
-            new MLAPIProfilerCounterValue<int>(ProfilerCategory.Network, ProfilerConstants.NumberOfTransportSendQueues.ToString(),
                 ProfilerMarkerDataUnit.Count, ProfilerCounterOptions.FlushOnEndOfFrame);
 
         //Messages
@@ -112,8 +104,6 @@ namespace ProfilerModuleOverride
 
             ConnectionsCounterValue.Value = 1;
             TickRateCounterValue.Value = 1;
-            TransportSendsCounterValue.Value = 1;
-            TransportSendQueuesCounterValue.Value = 1;
 
             NamedMessagesCounterValue.Value = 1;
             UnnamedMessagesCounterValue.Value = 1;
